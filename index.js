@@ -20,6 +20,9 @@ app.get('/fetchUserFromPlaceholder',usersController.bulkDataInsert);
 app.get('/getAllUsers/:userId?',usersController.getAllUsers);
 app.get('/fetchPostAndCommentsFromPlaceholder',postController.bulkDataInsert)
 app.get('/getAllPost/:userId?',postController.getAllUserPost)
+app.get('*',(int , out)=>{
+  out.send('Resource is not found');
+})
 
 
 app.listen(port,()=>{
